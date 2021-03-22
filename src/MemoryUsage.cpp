@@ -92,24 +92,24 @@ void SRamDisplay(void)
 	
 	available	-=	data_size + bss_size + heap_size + stack_size;
 
-	Serial.print(F("+----------------+ "));			Serial.print((int)&__data_start);	Serial.println(" (__data_start)");
-	Serial.print(F("+      data      +"));			Serial.println();
-	Serial.print(F("+    variables   + size = "));	Serial.println(data_size);
-	Serial.print(F("+----------------+ "));			Serial.print((int)&__data_end);		Serial.println(" (__data_end / __bss_start)");
-	Serial.print(F("+      bss       +"));			Serial.println();
-	Serial.print(F("+    variables   + size = "));	Serial.println(bss_size);
-	Serial.print(F("+----------------+ "));			Serial.print((int)&__bss_end);		Serial.println(" (__bss_end / __heap_start)");
-	Serial.print(F("+      heap      + size = "));	Serial.println(heap_size);
-	Serial.print(F("+----------------+ "));			Serial.print((int)heap_end);		Serial.println(" (__brkval if not 0, or __heap_start)");
-	Serial.print(F("+                +"));			Serial.println();
-	Serial.print(F("+                +"));			Serial.println();
-	Serial.print(F("+   FREE RAM     + size = "));	Serial.println(available);
-	Serial.print(F("+                +"));			Serial.println();
-	Serial.print(F("+                +"));			Serial.println();
-	Serial.print(F("+----------------+ "));			Serial.print((int)SP);		Serial.println(" (SP)");
-	Serial.print(F("+     stack      + size = "));	Serial.println(stack_size);
-	Serial.print(F("+----------------+ "));			Serial.print((int)RAMEND);		Serial.println(" (RAMEND / __stack)");
+	NeoSerial.print(F("+----------------+ "));			NeoSerial.print((int)&__data_start);	NeoSerial.println(" (__data_start)");
+	NeoSerial.print(F("+      data      +"));			NeoSerial.println();
+	NeoSerial.print(F("+    variables   + size = "));	NeoSerial.println(data_size);
+	NeoSerial.print(F("+----------------+ "));			NeoSerial.print((int)&__data_end);		NeoSerial.println(" (__data_end / __bss_start)");
+	NeoSerial.print(F("+      bss       +"));			NeoSerial.println();
+	NeoSerial.print(F("+    variables   + size = "));	NeoSerial.println(bss_size);
+	NeoSerial.print(F("+----------------+ "));			NeoSerial.print((int)&__bss_end);		NeoSerial.println(" (__bss_end / __heap_start)");
+	NeoSerial.print(F("+      heap      + size = "));	NeoSerial.println(heap_size);
+	NeoSerial.print(F("+----------------+ "));			NeoSerial.print((int)heap_end);		NeoSerial.println(" (__brkval if not 0, or __heap_start)");
+	NeoSerial.print(F("+                +"));			NeoSerial.println();
+	NeoSerial.print(F("+                +"));			NeoSerial.println();
+	NeoSerial.print(F("+   FREE RAM     + size = "));	NeoSerial.println(available);
+	NeoSerial.print(F("+                +"));			NeoSerial.println();
+	NeoSerial.print(F("+                +"));			NeoSerial.println();
+	NeoSerial.print(F("+----------------+ "));			NeoSerial.print((int)SP);		NeoSerial.println(" (SP)");
+	NeoSerial.print(F("+     stack      + size = "));	NeoSerial.println(stack_size);
+	NeoSerial.print(F("+----------------+ "));			NeoSerial.print((int)RAMEND);		NeoSerial.println(" (RAMEND / __stack)");
 
-	Serial.println();
-	Serial.println();
+	NeoSerial.println();
+	NeoSerial.println();
 }
